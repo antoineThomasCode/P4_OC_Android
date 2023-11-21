@@ -2,12 +2,12 @@
     <string name="app_name">MaReu</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">Liste des réunions</string>
+    <string name="first_fragment_label">Ma réu</string>
     <string name="second_fragment_label">Aperçu de la réunion</string>
     <string name="next">Voir les réunions</string>
     <string name="previous">Toutes mes réunions</string>
 
     <string name="lorem_ipsum">
-        Activité princiaple
+        fragment N°1
     </string>
 </resources>
