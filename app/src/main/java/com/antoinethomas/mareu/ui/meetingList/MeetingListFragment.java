@@ -8,13 +8,19 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.antoinethomas.mareu.R;
 import com.antoinethomas.mareu.databinding.FragmentFirstBinding;
+import com.antoinethomas.mareu.repositories.MeetingRepository;
 
 public class MeetingListFragment extends Fragment {
 
     private FragmentFirstBinding binding;
+
+    private RecyclerView recyclerView;
+
 
     @Override
     public View onCreateView(
@@ -23,20 +29,16 @@ public class MeetingListFragment extends Fragment {
     ) {
 
         binding = FragmentFirstBinding.inflate(inflater, container, false);
+        recyclerView = binding.meetingList;
         return binding.getRoot();
-
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        MeetingAdapter adapter = new MeetingAdapter(MeetingRepository.getInstance().getMeetings());
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(MeetingListFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
-            }
-        });
     }
 
     @Override

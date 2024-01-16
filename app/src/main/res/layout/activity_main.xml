@@ -27,6 +27,12 @@
 
     <include layout="@layout/content_main" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/meetingList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,22 +41,17 @@
         android:layout_marginBottom="16dp">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab"
+            android:id="@+id/fabAddMeeting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:backgroundTint="@color/red"
             app:elevation="6dp"
-            app:pressedTranslationZ="12dp"/>
+            app:srcCompat="@drawable/baseline_add_24"
+            app:backgroundTintMode="@color/white"
+            app:pressedTranslationZ="12dp"
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="test"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@color/white"
-        />
-
+            android:contentDescription="addMeet"
+            />
     </FrameLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

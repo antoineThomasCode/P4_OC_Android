@@ -14,6 +14,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_addMeetingFragment"
+            app:destination="@id/addMeetingFragment" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
@@ -24,5 +27,12 @@
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addMeetingFragment"
+        android:name="com.antoinethomas.mareu.ui.addMeeting.AddMeetingFragment"
+        android:label="ajouter un réu"
+        tools:layout="@layout/fragment_add_meeting"
+        >
     </fragment>
 </navigation>
